@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: DevOpsCapstone2
+  name: custom-web-app
+
 spec:
-  selectors:
+  selector:
     matchLabels:
-      app: DevOpsCapstone2
-  replicas: 2  # Set replicas to 2
+      app: web-app
+  replicas: 2
   template:
     metadata:
       labels:
-        app: DevOpsCapstone2
+        app: web-app
     spec:
       containers:
-      - name: website
+      - name: custom-web-app
         image: ashayalmighty/website:latest
-        port:
+        ports:
         - containerPort: 80
