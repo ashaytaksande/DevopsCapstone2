@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: DevOpsCapstone2
 spec:
+  selectors:
+    matchLabels:
+      app: DevOpsCapstone2
   replicas: 2  # Set replicas to 2
   template:
     metadata:
