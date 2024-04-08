@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         DockerCred = credentials('dockercred')
-#        version = "${env.BUILD_ID}-${env.GIT_COMMIT.substring(0, 5)}"
         branchName = "${env.GIT_BRANCH.split('/').size() == 1 ? env.GIT_BRANCH.split('/')[-1] : env.GIT_BRANCH.split('/')[1..-1].join('/')}"
     }
 
