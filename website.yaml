@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: DevOpsCapstone2
+spec:
+  replicas: 2  # Set replicas to 2
+  template:
+    metadata:
+      labels:
+        app: DevOpsCapstone2
+    spec:
+      containers:
+      - name: website
+        image: ashayalmighty/website:latest
+        port:
+        - containerPort: 80
